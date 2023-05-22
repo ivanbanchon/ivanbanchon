@@ -351,34 +351,261 @@ class Entrega{
 	
 	// ejercicio 8: elaborar un programa que nos muestre el
 	// significado de aniversario de cada descada hasta los 60. (diagrama de flujo)
-	let decada 
-	decada = parseInt (Leer (" Digite una decada "))
 	
-	switch (decada){ 
+	let decada  
+	decada= parseInt( Leer ("digite una decada:"))
+	
+	switch (decada) {
 		case 10:
-		console.log ( "Bodas de Hojalata")
+			console.log("bodas de hojalata")
+		 break;
+		case	20:
+		 console.log("boda de porcelana")
 		break;
-		case 20:
-		console.log ( "Bodas de Porcelana")
+		 case 30:
+		 console.log("boda de perlas")
 		break;
-		case 30:
-		console.log ( "Bodas de Perlas")
+		 case 40:
+		 console.log("bodas de rubi")
 		break;
-		case 40:
-		console.log ("Bodas de Rubi")
+		 case 50:
+		 console.log("bodas de oro")
+		 break;
+		 case 60:
+		 console.log("bodas de diamante")
 		break;
-		case 50:
-		console.log ("Bodas de Oro")
-		break;
-		case 60:
-		console.log ("Bodas de Diamante")
-		break;
-		default: 
-		console.log ( "Decada no existente")
+		 default:
+			console.log("decada no existente")
 	    }
 
 	}
 
+	ejerciciocondicionales9 () { 
+	
+	// hacer un programa que tenga un menu con los siguientes opciones.
+	// opcion 1: elevar un numero a una potencia x
+	// opcion 2: sacar la raiz cuadrada de un numero
+	// opcion 3: salir
+	
+	let opcion = parseInt(Leer("Digite una opcion"));
+	console.log("MENU");
+    console.log("1. Elevar un número a una potencia X");
+    console.log("2. Sacar la raíz cuadrada de un número");
+    console.log("3. Salir");
+
+		switch (opcion){
+			case 1:
+				let num = parseFloat(Leer("Digite un número"));
+				let pot = parseFloat(Leer("Digite la potencia"));
+				let resultado = Math.pow(num, pot);
+				console.log("El resultado es: " + resultado);
+				break;
+			case 2:
+				let num2 =parseFloat(Leer("Digite un número:"));
+				let resultado2=Math.sqrt(num2);
+				console.log("El resultado es: "+ resultado2);
+				break;
+			case 3:
+                console.log("Saliendo del programa...");
+				break;
+				default:
+					console.log("Se equivocó en la opción de menú.");	
+		}
+	
+	}
+
+
+	ejerciciodeciclos1 () { 
+	
+	// ejercicio 1: calcular la suma de los "n" primeros numeros.
+	
+	let N, suma, i 
+		console.log ("Calcular la suma de los N numeros");
+		N = Leer  ("Digite la cantidad de numeros a sumarse: ")
+		suma = 0
+		i=0
+		for  (i=1 ; i <= N ; i ++){ 
+			suma = suma + i;
+		 }
+		console.log  ("La suma es: ", suma)
+	}
+
+	ejerciciodeciclos2 () { 
+	
+	// ejercicio 2: se desea calcular independientemente la suma
+	// de los numeros pares e impares comprendidos entre 1 y 50.
+	
+	let sumaPares, sumaImpares, i
+	sumaPares = 0
+	sumaImpares = 0
+	console.log ("Calcular la suma de numeros pares e impares entre 1 y 50")
+	for (i=2 ; i >=49 ; i ++){ 
+		if (i % 2==0){ 
+			sumaPares = sumaPares+i }
+		else{ 
+			sumaImpares = sumaImpares+i
+		 }
+	 }
+	console.log  ("La suma de pares es: ", sumaPares)
+	console.log ("La suma de pares es: ", sumaImpares)
+	
+	}
+
+	ejerciciodeciclos3 () { 
+	
+	// ejercicio 3: leer 10 numeros e imprimir cuantos son positivos,
+	// cuantos negativos y cuantos neutros.
+	
+	let num, i, conteoP, conteoN, conteoNeutro 
+	conteoP = 0; conteoN = 0; conteoNeutro = 0;
+	console.log ("Ingresar 10 numeros y determinar la cantidad de positivos, negativos y neutros que hay");
+	for (i=1 ; i<=10 ; i++) {
+		num = Leer ( " Digite un numero: ")
+		
+		if  (num==0)	{ 
+			conteoNeutro = conteoNeutro+1}
+		else { 
+			if  (num>0){ 
+				conteoP = conteoP+1 }
+			else{ 
+				conteoN = conteoN+1;
+			 }
+		 
+	 	}
+	}
+	console.log  ("La cantidad de positivos es: ", conteoP)
+	console.log ("La cantidad de negativos es: ", conteoN)
+	console.log ("La cantidad de neutros es: ", conteoNeutro)
+
+	}
+
+	ejerciciodeciclos4 () { 
+	
+	//ejercicio 4: suponga que se tiene un conjunto de calificaciones de un grupo
+	// de 10 alumnos. realizar un algoritmo para calcular la calificacion promedio y
+	//la calificacion mas baja de todo el grupo
+	
+	let calificacion_promedio,calificacion_baja 
+	let calificacion,suma 
+	let i 
+	suma = 0 
+	calificacion_baja = 99999;
+	for (i=1 ;i<= 10; i++<= 1){
+		calificacion=parseInt(Leer(i+".digite una calificacion: "))
+		
+		
+		suma =suma + calificacion;
+	
+		if (calificacion < calificacion_baja) {
+			calificacion_baja = calificacion;
+		}
+	}
+	calificacion_promedio = suma/10;
+	console.log("la calificacion promedio es: ",calificacion_promedio); 
+	console.log("la calificacion mas baja es: ",calificacion_baja);
+
+	}
+
+	ejerciciodeciclos5 () { 
+	
+	// ejercicio 5:  calcular el factorial de un numero
+	// mayor o igual a 0
+
+	let num  
+	let i,factorial 
+	do{
+		num=parseInt(Leer ("digite un numero: "))
+	}while (num>=0)
+	i = 1
+	factorial = 1
+	while (i<=num) {
+		factorial = factorial*i
+		i = i+1
+	}
+	console.log("el factorial es: ",factorial); 
+
+	}
+
+	ejerciciodeciclos6 () { 
+	
+	// ejercicio 6 : calcular la siguiente sumatoria de los "N" elementos:
+	// s = 1 + 4 + 9 + ....
+	
+	let nElementos, i, suma 
+	console.log ("Calcular la suma de los N elementos");
+	nElementos = Leer  ("Digite la cantidad de elementos a sumarse: ")
+	
+	i = 1
+	suma = 0
+	while  (i <= nElementos) { 
+		suma = suma + i**2
+		i = i+1
+	 }
+	console.log  ("La suma es: ", suma)
+	
+	}
+
+	ejerciciodeciclos7 () { 
+	
+	// ejercicio 7: ingresar "N" enteros, visualizar la suma de los numeros pares
+	//de la lista, cuantos numeros pares exiten y cuales es el promedio de los
+	// numeros impares.
+	
+	let nElementos, i, num, sumaPares, conteoP, sumaImpares, conteoImpares, promedioImpares 
+	console.log ("Realizar la suma de los numeros pares de una lista y obtener el promedio de los impares");
+	nElementos = Leer  ("Digite la cantidad de elementos a ingresar")
+	i = 1; 	sumaPares = 0; 	conteoP = 0; 	sumaImpares = 0; 	conteoImpares = 0;
+	
+	while  (i <= nElementos) { 
+		num = Leer (". Digite un numero: ")
+				
+		if  (num % 2==0 ) { 
+			sumaPares =sumaPares+ num
+			conteoP = conteoP + 1
+			 }
+		else { 
+			sumaImpares = (sumaImpares + num)
+			conteoImpares = conteoImpares + 1 
+		}
+		i = i +1
+	 }
+	if (conteoP == 0) { 
+		console.log  ("No se han digitado numeros pares") }
+	else { 
+		console.log ("La suma de los numeros pares es: ", sumaPares)
+		console.log ("El conteo de los numeros pares es: ", conteoP )
+	 }
+	if  (conteoImpares == 0) {
+		console.log ("No se han digitado numeros impares")
+		 }
+	else { 
+		promedioImpares = (sumaImpares/conteoImpares)
+		console.log ("El promedio de impares es: ", promedioImpares)
+	 }
+	}
+
+	ejerciciofinal () { 
+	
+	//Calcular el salario de 5 personas 
+	
+	let i  
+	let salario_cada,horas,tarifa,sumatoria_salario,num_trabajadores 
+	i = 1
+	sumatoria_salario = 0
+	num_trabajadores=parseInt(Leer ("digite el numero de trabajores: "))
+	
+	tarifa=parseFloat(Leer("digite la tarifa: "))
+
+	while (i<=num_trabajadores) {
+		horas=parseInt(Leer(i+".digite el valor de horas trabajadas por este trabajador:"));
+		
+		salario_cada = horas*tarifa
+		console.log("el valor a pagar de este trabajador es: ",salario_cada)
+		i = i+1
+		sumatoria_salario = sumatoria_salario+salario_cada
+	}
+	console.log(" el valor total de salarios a pagar es de: ",sumatoria_salario)
+	}
 
 }
   
@@ -400,4 +627,13 @@ const entrega=new Entrega()
 //entrega.ejerciciocondicionales5()
 //entrega.ejerciciocondicionales6()
 //entrega.ejerciciocondicionales7()
-//entrega,ejerciciocondicionales8()
+//ntrega.ejerciciocondicionales8()
+//entrega.ejerciciocondicionales9()
+//entrega.ejerciciodeciclos1()
+//entrega.ejerciciodeciclos2()
+//entrega.ejerciciodeciclos3()
+//entrega.ejerciciodeciclos4()
+//entrega.ejerciciodeciclos5()
+//entrega.ejerciciodeciclos6()
+//entrega.ejerciciodeciclos7()
+//entrega.ejerciciofinal()
